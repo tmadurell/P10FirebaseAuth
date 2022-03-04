@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "234024924537",
+    "project_id": "p10firebaseauth-22f58",
+    "storage_bucket": "p10firebaseauth-22f58.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:234024924537:android:786b655af46f1114032ba8",
+        "android_client_info": {
+          "package_name": "com.main.p10firebaseauth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "234024924537-kg8iuinug7ea2ch8rk2f0l0nc8cfntke.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2HWLpq_m9g7ijLjecKz_u9Uv0WejrOug"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "234024924537-kg8iuinug7ea2ch8rk2f0l0nc8cfntke.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
