@@ -27,7 +27,7 @@
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.main.p10firebaseauth.HomeFragment"
+        android:name="com.main.p10firebaseauth.ProfileFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
 </navigation>
