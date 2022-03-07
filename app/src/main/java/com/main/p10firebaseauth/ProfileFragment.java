@@ -3,14 +3,20 @@ package com.main.p10firebaseauth;
 import android.os.Bundle;
 
 import androidx.annotation.*;
-import androidx.fragment.app.Fragment;
+import androidx.fragment.app.*;
 import androidx.navigation.*;
 import android.view.*;
+import android.widget.*;
+
+import com.bumptech.glide.*;
+import com.google.firebase.auth.*;
 
 
 public class ProfileFragment extends Fragment {
-
+    //8. Perfil de usuario
     NavController navController;   // <-----------------
+    ImageView photoImageView;
+    TextView displayNameTextView, emailTextView;
 
     public ProfileFragment() {}
 
@@ -23,6 +29,17 @@ public class ProfileFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        navController = Navigation.findNavController(view);  // <-----------------
+        photoImageView = view.findViewById(R.id.photoImageView);
+        displayNameTextView = view.findViewById(R.id.displayNameTextView);
+        emailTextView = view.findViewById(R.id.emailTextView);
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if(user != null){
+            displayNameTextView.setText(user.getDisplayName());
+            emailTextView.setText(user.getEmail());
+
+            Glide.with(requireView()).load(user.getPhotoUrl()).into(photoImageView);
+        }
     }
 }
