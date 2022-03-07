@@ -16,7 +16,7 @@ import com.google.firebase.auth.*;
 public class SignInFragment extends Fragment {
 
     NavController navController;   // <-----------------
-    ///6. SignIn con email/password
+    //6. SignIn con email/password
     private EditText emailEditText, passwordEditText;
     private Button emailSignInButton;
     private LinearLayout signInForm;
