@@ -4,12 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.21467391304347827" />
         <entry key="app/src/main/res/layout/app_bar_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.1648148148148148" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_register.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_sign_in.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.33" />
         <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.24217687074829933" />
         <entry key="app/src/main/res/menu/main.xml" value="0.11203703703703703" />
       </map>

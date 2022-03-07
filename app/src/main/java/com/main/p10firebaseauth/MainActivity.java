@@ -1,21 +1,25 @@
 package com.main.p10firebaseauth;
 
-import android.os.*;
-import android.view.*;
-import android.widget.*;
+import android.os.Bundle;
+import android.view.View;
+import android.view.Menu;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-
-import com.bumptech.glide.*;
+import com.bumptech.glide.Glide;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
-import androidx.annotation.*;
-import androidx.navigation.*;
-import androidx.navigation.ui.*;
+import androidx.annotation.NonNull;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.auth.*;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.main.p10firebaseauth.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
@@ -42,20 +46,21 @@ public class MainActivity extends AppCompatActivity {
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder()
+        mAppBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.homeFragment,
+                R.id.profileFragment
+        )
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-
-        //9. Perfil de usuario en el Drawer
-
         View header = navigationView.getHeaderView(0);
-        final ImageView photo = header.findViewById(R.id.photoImageView);
+        final ImageView photo = header.findViewById(R.id.imageView);
         final TextView name = header.findViewById(R.id.displayNameTextView);
-        final TextView email = header.findViewById(R.id.emailTextView);
+        final TextView email = header.findViewById(R.id.textView);
+
         FirebaseAuth.getInstance().addAuthStateListener(new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
