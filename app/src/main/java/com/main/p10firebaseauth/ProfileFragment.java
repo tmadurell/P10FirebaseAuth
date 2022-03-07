@@ -14,7 +14,6 @@ import com.google.firebase.auth.*;
 
 public class ProfileFragment extends Fragment {
     //8. Perfil de usuario
-
     NavController navController;   // <-----------------
     ImageView photoImageView;
     TextView displayNameTextView, emailTextView;
