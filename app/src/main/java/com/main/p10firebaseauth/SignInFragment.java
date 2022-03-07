@@ -146,6 +146,7 @@ public class SignInFragment extends Fragment {
         activityResultLauncher.launch(googleSignInClient.getSignInIntent());
     }
 
+    //
 //    @Override
 //    public void onActivityResult(int requestCode, int resultCode, Intent data) {
 //        super.onActivityResult(requestCode, resultCode, data);

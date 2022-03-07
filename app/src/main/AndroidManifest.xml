@@ -3,6 +3,7 @@
     package="com.main.p10firebaseauth">
 
     <!-- 7. SignIn con Google -->
+
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
