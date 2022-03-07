@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //9. Perfil de usuario en el Drawer
+
         View header = navigationView.getHeaderView(0);
         final ImageView photo = header.findViewById(R.id.photoImageView);
         final TextView name = header.findViewById(R.id.displayNameTextView);
