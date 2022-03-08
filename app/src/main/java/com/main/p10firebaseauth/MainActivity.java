@@ -20,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.*;
 import com.main.p10firebaseauth.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,6 +31,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        FirebaseFirestore.getInstance().setFirestoreSettings(new FirebaseFirestoreSettings.Builder()
+                .setPersistenceEnabled(false)
+                .build());
+
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -48,7 +54,8 @@ public class MainActivity extends AppCompatActivity {
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.homeFragment,
-                R.id.profileFragment
+                R.id.profileFragment,
+                R.id.signOutFragment
         )
                 .setOpenableLayout(drawer)
                 .build();
@@ -57,22 +64,28 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
 
         View header = navigationView.getHeaderView(0);
-        final ImageView photo = header.findViewById(R.id.imageView);
+        final ImageView photo = header.findViewById(R.id.photoImageView);
         final TextView name = header.findViewById(R.id.displayNameTextView);
-        final TextView email = header.findViewById(R.id.textView);
+        final TextView email = header.findViewById(R.id.emailTextView);
 
         FirebaseAuth.getInstance().addAuthStateListener(new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
+                //Importante hacer cambio
+                if (user != null) {
+                    if (user.getPhotoUrl() != null) {
+                        Glide.with(MainActivity.this)
+                                .load(user.getPhotoUrl().toString())
+                                .circleCrop()
+                                .into(photo);
+                    }
+                    //Importante hacer cambio
+                    if (user.getDisplayName() != null && user.getEmail() != null) {
 
-                if(user != null){
-                    Glide.with(MainActivity.this)
-                            .load(FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl().toString())
-                            .circleCrop()
-                            .into(photo);
-                    name.setText(FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
-                    email.setText(FirebaseAuth.getInstance().getCurrentUser().getEmail());
+                        name.setText(FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
+                        email.setText(FirebaseAuth.getInstance().getCurrentUser().getEmail());
+                    }
                 }
             }
         });

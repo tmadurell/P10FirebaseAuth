@@ -18,6 +18,7 @@ public class RegisterFragment extends Fragment {
 
 
     NavController navController;   // <-----------------
+
     private EditText emailEditText, passwordEditText;
     private Button registerButton;
     private FirebaseAuth mAuth;
