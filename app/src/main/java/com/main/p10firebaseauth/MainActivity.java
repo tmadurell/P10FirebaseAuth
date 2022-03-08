@@ -6,11 +6,11 @@ import android.view.Menu;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.navigation.NavigationView;
+import com.bumptech.glide.*;
+import com.google.android.material.snackbar.*;
+import com.google.android.material.navigation.*;
 
-import androidx.annotation.NonNull;
+import androidx.annotation.*;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
