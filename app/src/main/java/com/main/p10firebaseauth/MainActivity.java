@@ -1,25 +1,20 @@
 package com.main.p10firebaseauth;
 
 import android.os.Bundle;
-import android.view.View;
-import android.view.Menu;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.view.*;
+import android.widget.*;
 
 import com.bumptech.glide.*;
 import com.google.android.material.snackbar.*;
 import com.google.android.material.navigation.*;
 
 import androidx.annotation.*;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.*;
+import androidx.navigation.ui.*;
+import androidx.drawerlayout.widget.*;
+import androidx.appcompat.app.*;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.*;
 import com.google.firebase.firestore.*;
 import com.main.p10firebaseauth.databinding.ActivityMainBinding;
 
